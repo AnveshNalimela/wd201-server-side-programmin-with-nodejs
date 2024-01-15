@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <title><%=title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!--<style src="https://cdn.tailwindcss.com/"></style>-->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="grid grid-cols-6">
+      <div class="col-start-3 col-span-3">
+        <%- include('header.ejs') %>
+        <h4 class="py-2">SignUp as a new User</h4>
+        <form id="signup" action="/users" method="post">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          <div class="py-2">
+            <label for="firstName">FirstName:</label><br />
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="border border-gray-300 text-gray-900 rounded text-sm"
+              required
+            />
+          </div>
+          <div class="py-2">
+            <label for="lastName">LastName:</label><br />
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="border border-gray-300 text-gray-900 rounded text-sm"
+            />
+          </div>
+          <div class="py-2">
+            <label for="email">Email:</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="border border-gray-300 text-gray-900 rounded text-sm"
+              required
+            />
+          </div>
+          <div class="py-2">
+            <label for="password">Password:</label><br />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="border border-gray-300 text-gray-900 rounded text-sm"
+              required
+            />
+          </div>
+          <div class="py-2">
+            <button
+              type="submit"
+              class="text-white bg-green-500 hover:bg-green-800 text-size:medium rounded px-5 py-2"
+            >
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

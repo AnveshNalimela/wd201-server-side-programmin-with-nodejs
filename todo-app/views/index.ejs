@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+
+    <title><%= title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!--<style src="https://cdn.tailwindcss.com/"></style>-->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="grid grid-cols-6">
+      <div class="col-start-3 col-span-2">
+        <%- include('header.ejs') %>
+        <h5 class="py-2">Welcome to To-Do manager</h5>
+        <p class="py-2">
+          New here?<a href="/signup" class="text-green-600">signup</a>
+        </p>
+        <p class="py-2">
+          Already have an account<a href="/login" class="text-green-600"
+            >sign-In</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
